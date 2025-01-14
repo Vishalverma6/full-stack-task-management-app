@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { createMenuItem, deleteMenuItem, getAllMenuItems, updateMenuItem } from '../services/operations/menuAPI';
 import toast from 'react-hot-toast';
 import { setLoading } from '../slices/authSlice';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { useForm } from 'react-hook-form';
 import { MdAddCircleOutline, MdDelete, MdShoppingCart } from 'react-icons/md';
 import IconBtn from '../components/common/IconBtn';
@@ -20,6 +20,7 @@ const Menu = () => {
     const [isModalOpen, setIsModalOpen] = useState(false);
     const [confirmationModal, setConfirmationModal] = useState(null);
     const [selectedMenuItem, setSelectedMenuItem] = useState(null);
+    const {token} = useSelector((state) => state.auth);
 
     const {register,reset,handleSubmit,setValue,
         formState:{errors}
@@ -98,6 +99,10 @@ const Menu = () => {
     }
 
     const handleAddToCart = (item) => {
+        if(!token){
+            toast.error("Please Login to add menu in your cart")
+            return;
+        }
         dispatch(addToCart(item))
     }
 
