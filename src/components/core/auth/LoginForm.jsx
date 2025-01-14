@@ -3,6 +3,7 @@ import { useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import { login } from '../../../services/operations/authAPI';
 import { AiOutlineEye, AiOutlineEyeInvisible } from 'react-icons/ai';
+import Footer from '../../common/Footer';
 
 const LoginForm = () => {
 
@@ -83,6 +84,7 @@ const LoginForm = () => {
             </button>
             </label>
       </form>
+      
       
     </div>
   )

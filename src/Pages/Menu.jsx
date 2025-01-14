@@ -8,6 +8,8 @@ import { MdAddCircleOutline, MdDelete, MdShoppingCart } from 'react-icons/md';
 import IconBtn from '../components/common/IconBtn';
 import ConfirmationModal from '../components/common/ConfirmationModal';
 import { addToCart } from '../slices/cartSlice';
+import Footer from '../components/common/Footer';
+import Slider from '../components/common/Slider';
 
 
 
@@ -169,7 +171,7 @@ const Menu = () => {
         >
           Create Menu Item
         </button>
-    </div>
+      </div>
 
 
        {
@@ -257,6 +259,18 @@ const Menu = () => {
 
        ): (<div></div>)
        }
+
+       {/* Slider */}
+       <div className='mt-32'>
+          <Slider/>
+       </div>
+
+
+       {/* footer */}
+       <div className='mt-20 mb-16'>
+          <Footer/>
+       </div>
+       
     </>
   )
 }

@@ -3,12 +3,15 @@ import { useSelector } from 'react-redux'
 import RenderOrder from '../components/core/order/RenderOrder'
 import RenderTotalAmount from '../components/core/cart/RenderTotalAmount'
 import OrderHistroy from '../components/core/order/OrderHistory'
+import Footer from '../components/common/Footer'
+import Slider from '../components/common/Slider'
 
 const Order = () => {
 
     const {total} = useSelector((state) => state.cart)
   return (
-    <div className='text-white flex flex-col w-10/12  justify-between '>
+   <>
+      <div className='text-white flex flex-col w-10/12  justify-between '>
         <h1 className='flex gap-4 ml-14 mt-20'>
             Cart Items 
             <span className='bg-green-600 text-white rounded-lg hover:bg-green-700'>
@@ -28,7 +31,19 @@ const Order = () => {
                 <OrderHistroy/>
             </div>
         </div>
-    </div>
+       
+      </div>
+
+      {/* Slider */}
+      <div className='mt-32'>
+          <Slider/>
+       </div>
+
+       {/* footer */}
+       <div className='mt-20 mb-16'>
+          <Footer/>
+       </div>
+   </>
   )
 }
 

@@ -28,7 +28,7 @@ export const orderPlace = async(items, token, dispatch,navigate) => {
 
         toast.success(response?.data?.message || "Order placed Successfuly");
         dispatch(resetCart());
-        navigate("/menu");
+        navigate("/order");
         
     }
     catch(error){

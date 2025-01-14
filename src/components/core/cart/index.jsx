@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from 'react-redux'
 import RenderCartCourses from './RenderCartMenu'
 import RenderTotalAmount from './RenderTotalAmount'
 import { resetCart } from '../../../slices/cartSlice'
+import Footer from '../../common/Footer'
 
 
 const Cart = () => {
@@ -11,7 +12,8 @@ const Cart = () => {
     const {total, totalItems} =useSelector((state) => state.cart)
     console.log("totalItems",totalItems)
   return (
-    <div className="flex flex-col gap-6 w-8/12 items-center justify-center">
+    <>
+        <div className="flex flex-col gap-6 w-8/12 items-center justify-center">
             <h1 className=" mb-14 mt-8 text-2xl font-medium text-richblack-5 ">
                 Your Cart
             </h1>
@@ -33,6 +35,11 @@ const Cart = () => {
                 Your Cart is Empty</p>) } 
             
         </div>
+        {/* footer */}
+      <  div className='mt-20 mb-4'>
+          <Footer/>
+       </div>
+   </>
   )
 }
 

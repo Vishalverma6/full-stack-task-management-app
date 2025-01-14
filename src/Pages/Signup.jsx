@@ -1,8 +1,10 @@
 import React from 'react'
 import Template from '../components/core/auth/Template'
+import Footer from '../components/common/Footer'
 
 const Signup = () => {
   return (
+    <>
     <div>
        <Template
          title = "Create Your Account"
@@ -10,6 +12,11 @@ const Signup = () => {
          formtype = "signup"
        />
     </div>
+    {/* footer */}
+    <div className='mt-60 '>
+          <Footer/>
+       </div>
+    </>
   )
 }
 
